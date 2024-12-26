@@ -30,7 +30,7 @@ class QueryItem(BaseModel):
 class QueryItems(BaseModel):
     messages: list[QueryItem]
 
-@app.post('/query')
+@app.post('/api/query')
 async def query_gpt(request: QueryItems):
     messages = [{"role": "system", "content": "You are a helpful assistant."}]
     
